@@ -16,7 +16,7 @@
   * [贡献词汇](#贡献词汇)
 * [注意事项](#注意事项)
 * [开源许可](#开源许可)
-* [项目支持与致谢](#项目支持与致谢)
+* [评审专家](#评审专家)
 
 ## 简介
 
@@ -68,12 +68,28 @@ git clone https://github.com/Konsheng/Sensitive-lexicon.git
 
 本项目采用 **MIT License**，在保留版权与许可声明的前提下，可自由使用、修改与分发。
 
-## 项目支持与致谢
+## 评审专家
+感谢以下专家小组及维护员成员对本项目的贡献与支持：
 
-* **中国数字时代** ([https://chinadigitaltimes.net](https://chinadigitaltimes.net))
-* **中国农业科学院信息化办公室**
+评审专家：
+ - 张吉惟、林国瑞、林玟书、林雅南、江奕云
+
+评审小组：
+ - 杨舒南、蔡政琳、杨绍瑜
+
+评审委员会成员：
+ - 刘柏宏、阮建安、林子帆、夏志豪、吉茹定、李中冰、黄文隆、谢彦文、傅智翔、洪振霞
 
 感谢所有贡献者的关注与支持！
+
+## 敏感词检测服务
+- 提供基于 Go 的敏感词检测服务，支持模糊匹配与词库热加载。
+- 服务代码路径：`./cmd/server`（包含 REST API：`/detect`、`/contains`、`/reload`、`/health`）。
+- 分支导航：
+  - `dev` 开发版（服务与工程化更新更频繁）：https://github.com/Konsheng/Sensitive-lexicon/tree/dev
+- Docker 运行示例：
+  - `docker run -p 8080:8080 ghcr.io/<您的用户名>/sensitive-lexicon-server:latest`
+  - 环境变量：`PORT`, `LEXICON_DIR`, `FUZZY_MIN_NGRAM`, `FUZZY_MAX_NGRAM`, `FUZZY_MAX_DISTANCE`
 
 ## Star History
 <a href="https://star-history.com/#konsheng/Sensitive-lexicon&Date">
@@ -83,13 +99,3 @@ git clone https://github.com/Konsheng/Sensitive-lexicon.git
     <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=konsheng/Sensitive-lexicon&type=Date" />
   </picture>
 </a>
-
-## 敏感词检测服务（Go）
-
-- 提供基于 Go 的敏感词检测服务，支持模糊匹配与词库热加载。
-- 服务代码路径：`./cmd/server`（包含 REST API：`/detect`、`/contains`、`/reload`、`/health`）。
-- 分支导航：
-  - `dev` 开发版（服务与工程化更新更频繁）：https://github.com/Konsheng/Sensitive-lexicon/tree/dev
-- Docker 运行示例：
-  - `docker run -p 8080:8080 ghcr.io/<你的用户名>/sensitive-lexicon-server:latest`
-  - 环境变量：`PORT`, `LEXICON_DIR`, `FUZZY_MIN_NGRAM`, `FUZZY_MAX_NGRAM`, `FUZZY_MAX_DISTANCE`
